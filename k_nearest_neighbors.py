@@ -5,28 +5,34 @@ import numpy as np
 # Class
 class k_nearest_neighbors:
  # Initialization
+ # Goal: to use euclidean distance to compare values with one another
+ # Fit, predict, display values
+
     def __init__(self, n_neighbors=5):
         """Init for algorithm"""
         self.n_neighbors = n_neighbors
-        
+
 # Euclidean distance
     def euclidean_distance(self, a, b):
         eucl_distance = 0.0  # initializing eucl_distance at 0
+        """ Returns euclidean distance of values between two rows."""
 
         for index in range(len(a)):
             eucl_distance += (a[index] - b[index]) ** 2
+        """Subtracting b from a, square, add to eucl_dist."""
+        euclidean_distance = np.sqrt(eucl_distance)
 
-            euclidian_distance = np.sqrt(eucl_distance)
-
-        return euclidian_distance
+        return euclidean_distance
 
     # Fit k Nearest Neighbors
     def fit_knn(self, X_train, y_train):
+        """Fits the model to training data. X_train and y_train = inputs"""
         self.X_train = X_train
         self.y_train = y_train
 
     # Predict X for kNN
     def predict_knn(self, X):
+        """Returns predictions for X based on the fitted X_train and y_train data"""
 
         # initialize prediction_knn as empty list
         prediction_knn = []
@@ -61,7 +67,7 @@ class k_nearest_neighbors:
     # Print/display list of nearest_neighbors + corresponding euclidian
     # distance
     def display_knn(self, x):
-
+        """Inputs x, outputs a list containing nearest neighbors and their euclidean distance."""
         # initialize euclidean_distance as empty list
         euclidean_distance = []
 

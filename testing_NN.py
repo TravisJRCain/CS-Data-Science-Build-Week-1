@@ -23,7 +23,6 @@ target = wine.target
 # Train/Test splits
 X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.3)
 
-
 # Sklearn-learn KNN Classifier
 # Instantiate model
 clf = KNeighborsClassifier(n_neighbors=10)
@@ -33,7 +32,6 @@ clf.fit(X_train, y_train)
 
 # Prediction
 predict = clf.predict(X_test)
-# print("******SKLEARN******")
 print("Prediction:", predict)
 
 # Accuracy Score
@@ -42,8 +40,6 @@ print(f"Scikit-learn KNN classifier accuracy: {accuracy_score(y_test, predict)}"
 # y_pred
 y_pred = clf.predict([X_test[0]])
 print("y_pred:", y_pred)
-
-
 
 # k_nearest_neighbors (build model)
 # Instantiate model
@@ -54,7 +50,6 @@ classifier.fit_knn(X_train, y_train)
 
 # Prediction
 predict = classifier.predict_knn(X_test)
-# print("******BUILD MODEL******")
 print("Prediction:", predict)
 
 # Accuracy Score
