@@ -1,7 +1,6 @@
 # Imports
 import numpy as np
 
-
 # Class
 class k_nearest_neighbors:
  # Initialization
